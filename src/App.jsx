@@ -5,7 +5,7 @@ import Izbornik from './components/Izbornik'
 import { Route, Routes } from 'react-router-dom'
 import { RouteNames } from './constants'
 import Home from './pages/Home'
-import RadnikPregled from './pages/smjerovi/SmjerPregled'
+import RadnikPregled from './pages/Radnici/RadnikPregled'
 import './App.css'
 
 function App() {
