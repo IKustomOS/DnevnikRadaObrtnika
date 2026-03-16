@@ -5,7 +5,7 @@ import Izbornik from './components/Izbornik'
 import { Route, Routes } from 'react-router-dom'
 import { RouteNames } from './constants'
 import Home from './pages/Home'
-import SmjerPregled from './pages/smjerovi/SmjerPregled'
+import RadnikPregled from './pages/smjerovi/SmjerPregled'
 import './App.css'
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
       <Izbornik />
       <Routes>
         <Route path={RouteNames.HOME} element={<Home />} />
-        <Route path={RouteNames.SMJEROVI} element={<SmjerPregled />} />
+        <Route path={RouteNames.RADNICI} element={<RadnikPregled />} />
       </Routes>
       <hr />
       &copy; Edunova

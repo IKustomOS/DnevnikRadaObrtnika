@@ -1,6 +1,6 @@
-export const IME_APLIKACIJE='Edunova APP'
+export const IME_APLIKACIJE='Dnevnik rada obrtnika';
 
 export const RouteNames = {
     HOME: '/',
-    SMJEROVI: '/smjerovi' // ovo je ruta
+    RADNICI: '/Radnici' // ovo je ruta
 }

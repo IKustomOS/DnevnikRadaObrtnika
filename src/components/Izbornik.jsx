@@ -16,13 +16,13 @@ export default function Izbornik() {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
                         <Nav.Link
-                        onClick={()=>navigate(RouteNames.HOME)}
-                        >Početna</Nav.Link>
+                            onClick={()=>navigate(RouteNames.HOME)}
+                            >Početna</Nav.Link>
                         
                         <NavDropdown title="Programi" id="basic-nav-dropdown">
                             <NavDropdown.Item
-                            onClick={()=>navigate(RouteNames.SMJEROVI)}
-                            >Smjerovi</NavDropdown.Item>
+                            onClick={()=>navigate(RouteNames.RADNICI)}
+                            >Radnici</NavDropdown.Item>
                             
                         </NavDropdown>
                     </Nav>
