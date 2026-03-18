@@ -1,7 +1,7 @@
-import { Radnici } from "./RadniciPodaci";
+import { radnici } from "./RadniciPodaci";
 
 async function get() {
-    return {data: Radnici}
+    return {data: radnici}
 }
 
 export default {

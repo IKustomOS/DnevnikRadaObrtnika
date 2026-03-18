@@ -20,7 +20,7 @@ export default function RadnikPregled() {
         <>
             <ul>
                 {radnici && radnici.map(radnik => (
-                    <li>{radnik.naziv}</li>
+                    <li>{radnik.ime}</li>
                 ))}
             </ul>
         </>

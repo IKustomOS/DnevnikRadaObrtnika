@@ -1,16 +1,16 @@
-export const Radnici = [
+export const radnici = [
     {
         id: 1,
         ime: "Marko",
-        prezime: "Markovic",
+        prezime: "Marković",
         satnica: 10,
-        brojSati: 40,
+        brojSati: 40
     },
     {
         id: 2,
         ime: "Ivana",
-        prezime: "Ivanovic",
+        prezime: "Ivanović",
         satnica: 12,
-        brojSati: 35,
+        brojSati: 35
     }
 ];
