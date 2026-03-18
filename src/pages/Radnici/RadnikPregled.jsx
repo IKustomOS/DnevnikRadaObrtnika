@@ -1,7 +1,28 @@
-export default function RadnikPregled(){
-    return(
+import { useEffect, useState } from "react";
+import RadniciService from "../../services/radnici/RadniciService";
+
+export default function RadnikPregled() {
+
+
+    const [radnici, setRadnici] = useState([])
+
+    useEffect(() => {
+        ucitajRadnike()
+    }, [])
+
+    async function ucitajRadnike() {
+        await RadniciService.get().then((odgovor) => {
+            setRadnici(odgovor.data);
+        });
+    }
+
+    return (
         <>
-        Ovdje će se vidjeti pojedinačni radnici
+            <ul>
+                {radnici && radnici.map(radnik => (
+                    <li>{radnik.naziv}</li>
+                ))}
+            </ul>
         </>
     )
 }
