@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import RadniciService from "../../services/radnici/RadniciService";
 import { Table } from "react-bootstrap";
-import { NumericFormat } from "react-number-format"
+import { NumericFormat } from "react-number-format";
 
 export default function RadnikPregled() {
 
@@ -9,7 +9,7 @@ export default function RadnikPregled() {
     const [radnici, setRadnici] = useState([])
 
     useEffect(() => {
-        ucitajRadnike()
+        ucitajRadnike() 
     }, [])
 
     async function ucitajRadnike() {
@@ -44,7 +44,16 @@ export default function RadnikPregled() {
                                 decimalScale={2}
                                 />
                             </td>
-                            <td>{radnik.broj_sati}</td>
+                            <td>
+                                <NumericFormat
+                                value={radnik.broj_sati}
+                                displayType={'text'}
+                                thousandSeparator='.'
+                                decimalSeparator=','
+                                suffix={' h'}
+                                decimalScale={1}
+                                />
+                            </td>
                         </tr>
                     ))}
                 </tbody>
