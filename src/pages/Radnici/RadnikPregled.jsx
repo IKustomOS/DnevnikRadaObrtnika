@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import RadniciService from "../../services/radnici/RadniciService";
+import { Table } from "react-bootstrap";
+import { NumericFormat } from "react-number-format"
 
 export default function RadnikPregled() {
 
@@ -18,11 +20,36 @@ export default function RadnikPregled() {
 
     return (
         <>
-            <ul>
-                {radnici && radnici.map(radnik => (
-                    <li>{radnik.ime}</li>
-                ))}
-            </ul>
+            <Table>
+                <thead>
+                    <tr>
+                        <th>Ime</th>
+                        <th>Prezime</th>
+                        <th>Satnica</th>
+                        <th>Broj sati</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {radnici && radnici.map(radnik => (
+                        <tr>
+                            <td>{radnik.ime}</td>
+                            <td>{radnik.prezime}</td>
+                            <td>
+                                <NumericFormat
+                                value={radnik.satnica}
+                                displayType={'text'}
+                                thousandSeparator='.'
+                                decimalSeparator=','
+                                suffix={' €'}
+                                decimalScale={2}
+                                />
+                            </td>
+                            <td>{radnik.broj_sati}</td>
+                        </tr>
+                    ))}
+                </tbody>
+            </Table>
+
         </>
     )
 }
