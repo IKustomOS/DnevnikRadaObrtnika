@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import RadniciService from "../../services/radnici/RadniciService";
+import RadniciService from "../../services/radnik/RadniciService";
 import { Table } from "react-bootstrap";
 import { NumericFormat } from "react-number-format";
 
@@ -35,7 +35,7 @@ export default function RadnikPregled() {
                     </tr>
                 </thead>
                 <tbody>
-                    {radnici && radnici.map(radnik => (
+                    {radnik && radnik.map(radnik => (
                         <tr>
                             <td>{radnik.ime}</td>
                             <td>{radnik.prezime}</td>
