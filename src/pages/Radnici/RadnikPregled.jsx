@@ -46,7 +46,7 @@ export default function RadnikPregled() {
                             </td>
                             <td>
                                 <NumericFormat
-                                value={radnik.broj_sati}
+                                value={radnik.redovniSati}
                                 displayType={'text'}
                                 thousandSeparator='.'
                                 decimalSeparator=','
@@ -54,6 +54,37 @@ export default function RadnikPregled() {
                                 decimalScale={1}
                                 />
                             </td>
+                            <td>
+                                <NumericFormat
+                                value={radnik.prekovremeniSati}
+                                displayType={'text'}
+                                thousandSeparator='.'
+                                decimalSeparator=','
+                                suffix={' h'}
+                                decimalScale={1}
+                                />
+                            </td>
+                            <td>
+                                <NumericFormat
+                                value={radnik.bonus}
+                                displayType={'text'}
+                                thousandSeparator='.'
+                                decimalSeparator=','
+                                suffix={' €'}
+                                decimalScale={2}
+                                />
+                            </td>
+                            <td>
+                                <NumericFormat
+                                value={radnik.penali}
+                                displayType={'text'}
+                                thousandSeparator='.'
+                                decimalSeparator=','
+                                suffix={' €'}
+                                decimalScale={2}
+                                />
+                            </td>                       
+
                         </tr>
                     ))}
                 </tbody>
