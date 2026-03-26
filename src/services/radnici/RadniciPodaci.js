@@ -4,10 +4,10 @@ export const radnici = [
         ime: "Marko",
         prezime: "Marković",
         satnica: 10,
-        redovniSati: 40
-        prekovremeniSati: 5
-        bolovanjeSati: 2
-        bonus: 100
+        redovniSati: 40,
+        prekovremeniSati: 5,
+        bolovanjeSati: 2,
+        bonus: 100,
         penali: 50
 
     },
@@ -16,10 +16,10 @@ export const radnici = [
         ime: "Ivana",
         prezime: "Ivanović",
         satnica: 12,
-        redovniSati: 35
-        prekovremeniSati: 10
-        bolovanjeSati: 0
-        bonus: 150
+        redovniSati: 35,
+        prekovremeniSati: 10,
+        bolovanjeSati: 0,
+        bonus: 150,
         penali: 20
     }
 ];

@@ -27,6 +27,11 @@ export default function RadnikPregled() {
                         <th>Prezime</th>
                         <th>Satnica</th>
                         <th>Broj sati</th>
+                        <th>Prekovremeni</th>
+                        <th>Bolovanje</th>
+                        <th>Bonus</th>
+                        <th>Penali</th>
+                        <th>Akcija</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -66,6 +71,16 @@ export default function RadnikPregled() {
                             </td>
                             <td>
                                 <NumericFormat
+                                value={radnik.bolovanje}
+                                displayType={'text'}
+                                thousandSeparator='.'
+                                decimalSeparator=','
+                                suffix={' h'}
+                                decimalScale={1}
+                                />
+                            </td>
+                            <td>
+                                <NumericFormat
                                 value={radnik.bonus}
                                 displayType={'text'}
                                 thousandSeparator='.'
@@ -83,7 +98,8 @@ export default function RadnikPregled() {
                                 suffix={' €'}
                                 decimalScale={2}
                                 />
-                            </td>                       
+                            </td>     
+                            <td></td>                  
 
                         </tr>
                     ))}
