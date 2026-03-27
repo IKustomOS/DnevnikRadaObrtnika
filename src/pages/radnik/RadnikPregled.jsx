@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
-import RadniciService from "../../services/radnik/RadniciService";
-import { Table } from "react-bootstrap";
+import { Button, Table } from "react-bootstrap";
 import { NumericFormat } from "react-number-format";
+import RadnikService from "../../services/radnik/RadnikService";
+import { RouteNames } from "../../constants";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function RadnikPregled() {
 
-
+    const navigate = useNavigate()
     const [radnici, setRadnici] = useState([])
 
     useEffect(() => {
@@ -13,13 +15,17 @@ export default function RadnikPregled() {
     }, [])
 
     async function ucitajRadnike() {
-        await RadniciService.get().then((odgovor) => {
+        await RadnikService.get().then((odgovor) => {
             setRadnici(odgovor.data);
         });
     }
 
     return (
         <>
+        <Link to={RouteNames.RADNIK_NOVI} 
+            className="btn btn-success w-100 mb-3 mt-3">
+                Dodavanje novog radnika
+            </Link>
             <Table>
                 <thead>
                     <tr>
@@ -35,8 +41,8 @@ export default function RadnikPregled() {
                     </tr>
                 </thead>
                 <tbody>
-                    {radnik && radnik.map(radnik => (
-                        <tr>
+                    {radnici && radnici.map(radnik => (
+                        <tr key={radnik.id}>
                             <td>{radnik.ime}</td>
                             <td>{radnik.prezime}</td>
                             <td>
@@ -71,7 +77,7 @@ export default function RadnikPregled() {
                             </td>
                             <td>
                                 <NumericFormat
-                                value={radnik.bolovanje}
+                                value={radnik.bolovanjeSati}
                                 displayType={'text'}
                                 thousandSeparator='.'
                                 decimalSeparator=','
@@ -99,7 +105,11 @@ export default function RadnikPregled() {
                                 decimalScale={2}
                                 />
                             </td>     
-                            <td></td>                  
+                            <td>
+                                <Button onClick={()=>{navigate(`/radnik/${radnik.id}`)}}>
+                                    Promjena
+                                </Button>
+                            </td>                  
 
                         </tr>
                     ))}
