@@ -31,10 +31,16 @@ function nadiIndex(id){
     return radnici.findIndex(s => s.id === parseInt(id))
 }
 
+async function obrisi(id,radnici) {
+    const index = nadiIndex(id)
+    radnici.splice(index,1)
+}
+
 
 export default{
     get,
     dodaj,
     getById,
-    promjeni
+    promjeni,
+    obrisi
 }

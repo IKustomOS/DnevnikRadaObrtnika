@@ -109,6 +109,10 @@ export default function RadnikPregled() {
                                 <Button onClick={()=>{navigate(`/radnik/${radnik.id}`)}}>
                                     Promjena
                                 </Button>
+                                &nbsp;&nbsp;
+                                 <Button variant="danger" onClick={()=>{obrisi(radnik.id)}}>
+                                    Obriši
+                                </Button>
                             </td>                  
 
                         </tr>
