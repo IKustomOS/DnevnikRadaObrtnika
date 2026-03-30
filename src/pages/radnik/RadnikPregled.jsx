@@ -20,6 +20,14 @@ export default function RadnikPregled() {
         });
     }
 
+    async function obrisi(id) {
+        if(!confirm('Sigurno obrisati')){
+            return
+        }
+        await RadnikService.obrisi(id, radnici)
+        ucitajRadnike()
+    }
+
     return (
         <>
         <Link to={RouteNames.RADNIK_NOVI} 
