@@ -24,7 +24,7 @@ export default function RadnikPregled() {
         if(!confirm('Sigurno obrisati')){
             return
         }
-        await RadnikService.obrisi(id, radnici)
+        await RadnikService.obrisi(id)
         ucitajRadnike()
     }
 

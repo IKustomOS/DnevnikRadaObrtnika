@@ -2,7 +2,7 @@ import { radnici } from "./RadnikPodaci"
 
 
 async function get() {
-    return {data: radnici}
+    return {data: [...radnici]}
 }
 
 
@@ -31,7 +31,7 @@ function nadiIndex(id){
     return radnici.findIndex(s => s.id === parseInt(id))
 }
 
-async function obrisi(id,radnici) {
+async function obrisi(id) {
     const index = nadiIndex(id)
     radnici.splice(index,1)
 }
