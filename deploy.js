@@ -3,10 +3,9 @@ const ftpDeploy = new FtpDeploy();
 
 const config = {
     user: "edunova15@origo.hr",
-    // Password optional, prompted if none given
-    password: "cOdNsZM5lK2hKohsovsl",
-    host: "ftp.origo.hr",
-    port: 21,
+    password: process.env.FTP_PASSWORD,
+    host: process.env.FTP_HOST,
+    port: process.env.FTP_PORT,
     localRoot: __dirname + "/dist",
     remoteRoot: "/",
     // include: ["*", "**/*"],      // this would upload everything except dot files
