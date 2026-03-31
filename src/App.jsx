@@ -14,17 +14,16 @@ function App() {
 
 
   return (
-    <Container>
+    <Container style={ {backgroundColor: window.location.hostname === 'localhost' ? '#ffd8cc' : 'none'}}>
       <Izbornik />
       <Routes>
         <Route path={RouteNames.HOME} element={<Home />} />
         <Route path={RouteNames.RADNIK} element={<RadnikPregled />} />
         <Route path={RouteNames.RADNIK_NOVI} element={<RadnikNovi />} />
         <Route path={RouteNames.RADNIK_PROMJENA} element={<RadnikPromjena />} />
-
       </Routes>
       <hr />
-      &copy; Ivan K.
+      &copy; Ivan K. 2026.g.
     </Container>
   )
 }
