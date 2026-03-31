@@ -6,3 +6,6 @@ export const RouteNames = {
     RADNIK_NOVI: '/radnik/novi',
     RADNIK_PROMJENA: '/radnik/:id'
 }
+
+// memorija, localStorage, firebase
+export const DATA_SOURCE = 'localStorage';

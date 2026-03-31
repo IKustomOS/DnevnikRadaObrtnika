@@ -16,6 +16,10 @@ export default function RadnikPregled() {
 
     async function ucitajRadnike() {
         await RadnikService.get().then((odgovor) => {
+            if (!odgovor.success) {
+                alert('Nije implementiran servis')
+                return
+            }
             setRadnici(odgovor.data);
         });
     }

@@ -12,9 +12,11 @@ export default function radnikPromjena(){
 
     async function ucitajRadnik() {
         await RadnikService.getById(params.id).then((odgovor)=>{
-            console.table(odgovor.data)
+            if (!odgovor.success) {
+                alert('Nije implementiran servis')
+                return
+            }
             const s = odgovor.data
-            // po potrebi prilagođavam podatke
         
             
             setRadnik(s)
