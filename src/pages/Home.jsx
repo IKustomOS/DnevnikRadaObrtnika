@@ -10,7 +10,7 @@ export default function Home() {
                 <img src={slika} style={{ maxHeight: '20rem', maxWidth: '20rem' }} />
             </div>
 
-            <h1>Dobrodošli na {IME_APLIKACIJE}</h1>
+            <h1>Dobrodošli na <br /> {IME_APLIKACIJE}</h1>
 
            <div>
            <DotLottieReact
