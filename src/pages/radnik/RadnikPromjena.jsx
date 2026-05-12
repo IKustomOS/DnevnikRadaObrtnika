@@ -28,7 +28,7 @@ export default function radnikPromjena(){
     },[])
 
     async function promjeni(radnik){
-        //console.table(radnik) // ovo je za kontrolu da li je sve OK
+        //console.table(radnik) // ovo je za kontrolu je li sve OK
         await RadnikService.promjeni(params.id,radnik).then(()=>{
             navigate(RouteNames.RADNIK)
         })
