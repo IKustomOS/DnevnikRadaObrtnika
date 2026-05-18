@@ -11,7 +11,7 @@ export default function RadnikPregled() {
     const [radnici, setRadnici] = useState([])
 
     useEffect(() => {
-        ucitajRadnike() 
+        ucitajRadnike()
     }, [])
 
     async function ucitajRadnike() {
@@ -25,7 +25,7 @@ export default function RadnikPregled() {
     }
 
     async function obrisi(id) {
-        if(!confirm('Sigurno obrisati')){
+        if (!confirm('Sigurno obrisati')) {
             return
         }
         await RadnikService.obrisi(id)
@@ -34,8 +34,8 @@ export default function RadnikPregled() {
 
     return (
         <>
-        <Link to={RouteNames.RADNIK_NOVI} 
-            className="btn btn-success w-100 mb-3 mt-3">
+            <Link to={RouteNames.RADNIK_NOVI}
+                className="btn btn-success w-100 mb-3 mt-3">
                 Dodavanje novog radnika
             </Link>
             <Table>
@@ -59,73 +59,73 @@ export default function RadnikPregled() {
                             <td>{radnik.prezime}</td>
                             <td>
                                 <NumericFormat
-                                value={radnik.satnica}
-                                displayType={'text'}
-                                thousandSeparator='.'
-                                decimalSeparator=','
-                                suffix={' €'}
-                                decimalScale={2}
+                                    value={radnik.satnica}
+                                    displayType={'text'}
+                                    thousandSeparator='.'
+                                    decimalSeparator=','
+                                    suffix={' €'}
+                                    decimalScale={2}
                                 />
                             </td>
                             <td>
                                 <NumericFormat
-                                value={radnik.redovniSati}
-                                displayType={'text'}
-                                thousandSeparator='.'
-                                decimalSeparator=','
-                                suffix={' h'}
-                                decimalScale={1}
+                                    value={radnik.redovniSati}
+                                    displayType={'text'}
+                                    thousandSeparator='.'
+                                    decimalSeparator=','
+                                    suffix={' h'}
+                                    decimalScale={1}
                                 />
                             </td>
                             <td>
                                 <NumericFormat
-                                value={radnik.prekovremeniSati}
-                                displayType={'text'}
-                                thousandSeparator='.'
-                                decimalSeparator=','
-                                suffix={' h'}
-                                decimalScale={1}
+                                    value={radnik.prekovremeniSati}
+                                    displayType={'text'}
+                                    thousandSeparator='.'
+                                    decimalSeparator=','
+                                    suffix={' h'}
+                                    decimalScale={1}
                                 />
                             </td>
                             <td>
                                 <NumericFormat
-                                value={radnik.bolovanjeSati}
-                                displayType={'text'}
-                                thousandSeparator='.'
-                                decimalSeparator=','
-                                suffix={' h'}
-                                decimalScale={1}
+                                    value={radnik.bolovanjeSati}
+                                    displayType={'text'}
+                                    thousandSeparator='.'
+                                    decimalSeparator=','
+                                    suffix={' h'}
+                                    decimalScale={1}
                                 />
                             </td>
                             <td>
                                 <NumericFormat
-                                value={radnik.bonus}
-                                displayType={'text'}
-                                thousandSeparator='.'
-                                decimalSeparator=','
-                                suffix={' €'}
-                                decimalScale={2}
+                                    value={radnik.bonus}
+                                    displayType={'text'}
+                                    thousandSeparator='.'
+                                    decimalSeparator=','
+                                    suffix={' €'}
+                                    decimalScale={2}
                                 />
                             </td>
                             <td>
                                 <NumericFormat
-                                value={radnik.penali}
-                                displayType={'text'}
-                                thousandSeparator='.'
-                                decimalSeparator=','
-                                suffix={' €'}
-                                decimalScale={2}
+                                    value={radnik.penali}
+                                    displayType={'text'}
+                                    thousandSeparator='.'
+                                    decimalSeparator=','
+                                    suffix={' €'}
+                                    decimalScale={2}
                                 />
-                            </td>     
+                            </td>
                             <td>
-                                <Button onClick={()=>{navigate(`/radnik/${radnik.id}`)}}>
+                                <Button onClick={() => { navigate(`/radnik/${radnik.id}`) }}>
                                     Promjena
                                 </Button>
                                 &nbsp;&nbsp;
-                                 <Button variant="danger" onClick={()=>{obrisi(radnik.id)}}>
+                                <Button variant="danger" onClick={() => { obrisi(radnik.id) }}>
                                     Obriši
                                 </Button>
-                            </td>                  
+                            </td>
 
                         </tr>
                     ))}
